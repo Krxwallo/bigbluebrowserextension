@@ -1,0 +1,31 @@
+{
+
+  "manifest_version": 2,
+  "name": "BigBlueBrowserextension",
+  "version": "1.0.0-alpha",
+
+  "description": "The browser extension for the discord bot that automutes people when unmuted in BBB.",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.lehrerfortbildung-bw.de/*"],
+      "js": ["main.js"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "freshkenny@bigbluebot.de",
+      "strict_min_version": "50.0"
+    }
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "permissions": ["nativeMessaging"]
+}
