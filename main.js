@@ -27,6 +27,8 @@ function loop() {
             .split(' ')[1] // e.g. muted--2oPUk4
             .split('--')[0] // e.g. muted
         ;
+        // Ignore noVoice
+        if (status === "noVoice") continue;
         statusMap[name] = status;
         if (oldMap) {
             if (oldMap[name] !== status) {
